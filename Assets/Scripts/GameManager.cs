@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
         StartCoroutine(SpawnEnemyCoroutine());
     }
 
-     private void Update()
+    private void Update()
     {
         int seconds = 60+(int)Time.time;
         int minutes = -1;
