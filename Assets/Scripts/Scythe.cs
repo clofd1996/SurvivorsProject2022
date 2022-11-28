@@ -28,7 +28,7 @@ public class Scythe : MonoBehaviour
         Enemy enemy = collision.GetComponent<Enemy>();
         if (enemy != null)
         {
-            enemy.Damage(2);
+            enemy.Damage(1);
             gameObject.SetActive(false);
         }
     }
