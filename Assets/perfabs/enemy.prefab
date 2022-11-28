@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   expPrefab: {fileID: 2304657266745190885, guid: f34f820df22cc954ca544f460ab3b93f, type: 3}
-  speed: 1
+  speed: 2
   HP: 2
-  damageText: {fileID: 0}
+  enemyDamage: 1
   isTrackingPlayer: 1
