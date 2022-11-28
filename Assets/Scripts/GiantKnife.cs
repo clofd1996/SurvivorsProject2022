@@ -7,6 +7,8 @@ public class GiantKnife : MonoBehaviour
     protected GameObject player; //定义一下GameObject具体是什么
     Vector3 direction;
 
+    public int giantKnifeDamage = 2;
+
     internal void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player"); //定义下面update里player具体指代什么
@@ -39,7 +41,7 @@ public class GiantKnife : MonoBehaviour
 
         if (player != null)
         {
-            player.Damage(2); // 碰撞给予2点伤害
+            player.Damage(giantKnifeDamage); // 碰撞给予 Giant Knife Damage = 2点伤害
             gameObject.SetActive(false); //匕首碰撞后消失
         }
     }

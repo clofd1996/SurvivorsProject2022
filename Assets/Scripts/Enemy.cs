@@ -9,7 +9,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] GameObject expPrefab; //经验prefab
     [SerializeField] float speed = 1f; //怪物速度
     [SerializeField] float HP = 2; //怪物HP
-    [SerializeField] TMP_Text damageText; //怪物受伤 文本显示
+    public int enemyDamage = 1;
     public bool isTrackingPlayer = true;
     protected GameObject player; //定义一下GameObject具体是什么
     // Start is called before the first frame update
@@ -24,7 +24,7 @@ public class Enemy : MonoBehaviour
 
         if (player != null)
         {
-            player.Damage(1); //碰撞造成1点伤害
+            player.Damage(enemyDamage); //碰撞造成 Enemy Damage = 1点伤害
             gameObject.SetActive(false); //怪物碰撞后消失
         }
     }
