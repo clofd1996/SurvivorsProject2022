@@ -26,8 +26,12 @@ public class katana : BaseWeapon
             spriteRenderer.enabled = true;
             boxCollider2D.enabled = true;
             yield return new WaitForSeconds(1.5f);
+
+            //for (int i = 0; i < level; i++)
+            //{
+            //    gameObject.
+            //}
         }
-        
     }
 
 

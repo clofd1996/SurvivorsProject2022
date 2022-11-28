@@ -18,9 +18,9 @@ public class Player : MonoBehaviour
     internal void AddExp()
     {
         currentExp++;
-        if (currentExp == expToLevel)
+        if (currentExp >= expToLevel)
         {
-            currentExp = 0;
+            currentExp -= expToLevel;
             expToLevel += 5;
             currentLevel++;
             weapons[1].LevelUp();
