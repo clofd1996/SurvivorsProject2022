@@ -21,12 +21,11 @@ public class Enemy : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Player player = collision.GetComponent<Player>();
-        if (player)
+
+        if (player != null)
         {
-            if (player.OnDamage())
-            {
-                Destroy(gameObject);
-            }
+            player.Damage(1); //碰撞造成1点伤害
+            gameObject.SetActive(false); //怪物碰撞后消失
         }
     }
 
@@ -55,8 +54,6 @@ public class Enemy : MonoBehaviour
     internal void Damage(int damage)
     {
         HP -= damage;
-        
-        SpawnDamageNumber(damageText, damage); // 显示伤害数字
 
         if (HP <= 0)
         {

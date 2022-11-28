@@ -82,15 +82,19 @@ public class Player : MonoBehaviour
         if (!isInvincible) //如果 非无敌
         {
             StartCoroutine(InvincibleCoroutine());
-
-            playerHP -= 1;
-            if (--playerHP <= 0)
-            {
-                Destroy(gameObject);
-            }
             return true;
         }
         return false;
+    }
+
+    internal void Damage(int damage)
+    {
+        playerHP -= damage;
+
+        if (playerHP <= 0)
+        {            
+            Destroy(gameObject);
+        }
     }
 
     // Update is called once per frame

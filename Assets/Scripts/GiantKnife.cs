@@ -36,12 +36,11 @@ public class GiantKnife : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Player player = collision.GetComponent<Player>();
-        if (player)
+
+        if (player != null)
         {
-            if (player.OnDamage())
-            {
-                Destroy(gameObject);
-            }
+            player.Damage(2); // 碰撞给予2点伤害
+            gameObject.SetActive(false); //匕首碰撞后消失
         }
     }
 
