@@ -40,6 +40,7 @@ public class Player : MonoBehaviour
 
 
     bool isInvincible;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -87,6 +88,7 @@ public class Player : MonoBehaviour
         return false;
     }
 
+
     internal void Damage(int damage)
     {
         playerHP -= damage;
@@ -94,6 +96,7 @@ public class Player : MonoBehaviour
         if (playerHP <= 0)
         {            
             Destroy(gameObject);
+            GetComponent<GameOver>().ShowDeathScreen();
         }
     }
 

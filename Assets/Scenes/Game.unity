@@ -488,7 +488,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &198883680
 RectTransform:
   m_ObjectHideFlags: 0
@@ -508,7 +508,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 6.8279114}
+  m_AnchoredPosition: {x: 0, y: 6.827881}
   m_SizeDelta: {x: -983.2285, y: -225.3232}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &198883681
@@ -5788,6 +5788,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88f28b4a0c4ec7b49b49f8d8bff638ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &544348660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 544348651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a20e585b8c486194fa68cfdd89501ad6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameOverPanel: {fileID: 198883679}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -11765,11 +11778,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 741416303186700106, guid: 5efee29f4689cd440b294860b70c975f, type: 3}
       propertyPath: maxHP
-      value: 100
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 741416303186700106, guid: 5efee29f4689cd440b294860b70c975f, type: 3}
       propertyPath: playerHP
-      value: 100
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 741416303186700106, guid: 5efee29f4689cd440b294860b70c975f, type: 3}
       propertyPath: weapons.Array.data[0]
