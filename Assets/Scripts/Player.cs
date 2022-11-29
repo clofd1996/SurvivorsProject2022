@@ -23,6 +23,7 @@ public class Player : MonoBehaviour
             currentExp -= expToLevel;
             expToLevel += 5;
             currentLevel++;
+            weapons[0].LevelUp();
             weapons[1].LevelUp();
         }
     }

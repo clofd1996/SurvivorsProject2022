@@ -7,6 +7,7 @@ public class katana : BaseWeapon
     SpriteRenderer spriteRenderer;
     BoxCollider2D boxCollider2D;
 
+
     private void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -19,6 +20,8 @@ public class katana : BaseWeapon
     {
         while (true)
         {
+            transform.localScale = Vector3.one * (1 + level * 0.3f); // 每次升级增加0.3倍大小
+
             spriteRenderer.enabled = false;
             boxCollider2D.enabled = false;
             yield return new WaitForSeconds(0.5f);
@@ -26,11 +29,6 @@ public class katana : BaseWeapon
             spriteRenderer.enabled = true;
             boxCollider2D.enabled = true;
             yield return new WaitForSeconds(1.5f);
-
-            //for (int i = 0; i < level; i++)
-            //{
-            //    gameObject.
-            //}
         }
     }
 

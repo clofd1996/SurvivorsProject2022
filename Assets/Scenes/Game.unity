@@ -11778,11 +11778,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 741416303186700106, guid: 5efee29f4689cd440b294860b70c975f, type: 3}
       propertyPath: maxHP
-      value: 10
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 741416303186700106, guid: 5efee29f4689cd440b294860b70c975f, type: 3}
       propertyPath: playerHP
-      value: 10
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 741416303186700106, guid: 5efee29f4689cd440b294860b70c975f, type: 3}
       propertyPath: weapons.Array.data[0]
