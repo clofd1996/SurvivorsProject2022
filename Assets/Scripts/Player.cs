@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -8,6 +9,8 @@ public class Player : MonoBehaviour
     [SerializeField] private float speed = 1f ;
     [SerializeField] SpriteRenderer spriteRenderer;
     [SerializeField] BaseWeapon[] weapons;
+    [SerializeField] TMP_Text playerLevel;
+
 
 
     //经验相关
@@ -104,6 +107,9 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //计算角色等级
+        playerLevel.text = "Level  " + currentLevel.ToString();
+
         //控制移动速度 controll speed
         float inputX = Input.GetAxisRaw("Horizontal");
         float inputY = Input.GetAxisRaw("Vertical");
