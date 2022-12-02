@@ -8,7 +8,8 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] GameObject expPrefab; //经验prefab
     [SerializeField] float speed = 1f; //怪物速度
-    [SerializeField] float HP = 2; //怪物HP
+    [SerializeField] protected float HP = 2; //怪物HP
+    [SerializeField] protected float MaxHP = 2; //怪物最大HP
     public int enemyDamage = 1;
     public bool isTrackingPlayer = true;
     protected GameObject player; //定义一下GameObject具体是什么

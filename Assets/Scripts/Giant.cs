@@ -21,6 +21,8 @@ public class Giant : Enemy
     // Start is called before the first frame update
     protected override void Start()
     {
+        //float HP = GetComponent<Giant>().HP;
+        //float MaxHP = HP;
         animator = GetComponent<Animator>();
         base.Start();
     }
@@ -54,15 +56,15 @@ public class Giant : Enemy
                 break;
             case GiantState.Injury:
                 base.Update();
-                float hpRatio = (float)player.playerHP / player.maxHP;
-                if (hpRatio < 0.5)
+                float hpRatio = HP / MaxHP;
+                if (hpRatio <= 0.5) // Under 50% HP
                 {
-                    giantState = GiantState.Berserk;
+                    giantState = GiantState.Berserk; // goes into Berserk state
                 }
                 break;
             case GiantState.Berserk:
-                base.Update();
-                animator.SetTrigger("Attack");
+                base.Update(); // only stays in Berserk
+                animator.SetTrigger("Attack"); // continuously be in attacking state
                 //waitTimer = 5f;
                 //waitTimer -= Time.deltaTime;
                 //if (waitTimer <= 0)
