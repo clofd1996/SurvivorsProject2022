@@ -149,5 +149,7 @@ MonoBehaviour:
   expPrefab: {fileID: 2304657266745190885, guid: f34f820df22cc954ca544f460ab3b93f, type: 3}
   speed: 2
   HP: 2
+  MaxHP: 2
+  damageNumber: {fileID: 1675916519919303548, guid: 06751343f7f9f744a8d299dbb89cf7f5, type: 3}
   enemyDamage: 1
   isTrackingPlayer: 1

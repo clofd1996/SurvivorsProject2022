@@ -134,8 +134,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   expPrefab: {fileID: 2304657266745190885, guid: f34f820df22cc954ca544f460ab3b93f, type: 3}
   speed: 2
-  HP: 4
-  MaxHP: 4
+  HP: 10
+  MaxHP: 10
+  damageNumber: {fileID: 1675916519919303548, guid: 06751343f7f9f744a8d299dbb89cf7f5, type: 3}
   enemyDamage: 1
   isTrackingPlayer: 1
   knifePrefab: {fileID: 137149214240877907, guid: a4be2fbf05eb6db4f9f0f7f0294df3af, type: 3}

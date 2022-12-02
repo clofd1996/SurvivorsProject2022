@@ -21,8 +21,6 @@ public class Giant : Enemy
     // Start is called before the first frame update
     protected override void Start()
     {
-        //float HP = GetComponent<Giant>().HP;
-        //float MaxHP = HP;
         animator = GetComponent<Animator>();
         base.Start();
     }
@@ -54,27 +52,38 @@ public class Giant : Enemy
                 giantState = GiantState.Idle;
                 waitTimer = 5f;
                 break;
-            case GiantState.Injury:
-                base.Update();
-                float hpRatio = HP / MaxHP;
-                if (hpRatio <= 0.5) // Under 50% HP
-                {
-                    giantState = GiantState.Berserk; // goes into Berserk state
-                }
-                break;
+            //case GiantState.Injury:
+            //    base.Update();
+            //    float hpRatio = HP / MaxHP;
+            //    if (hpRatio)
+            //    else if (hpRatio <= 0.5) // Under 50% HP
+            //    {
+            //        giantState = GiantState.Berserk; // goes into Berserk state
+            //    }
+            //    break;
             case GiantState.Berserk:
-                base.Update(); // only stays in Berserk
-                animator.SetTrigger("Attack"); // continuously be in attacking state
-                //waitTimer = 5f;
-                //waitTimer -= Time.deltaTime;
-                //if (waitTimer <= 0)
-                //{
-                //    giantState = GiantState.Berserk;
-                //}
+                //base.Update(); // only stays in Berserk
+                animator.SetTrigger("Attack"); // continuously be in attacking state                
                 break;
             default:
                 break;
         }
+    }
+
+    public override void Damage(int damage)
+    {
+        base.Damage(damage);
+        float hpRatio = HP / MaxHP;
+        if (hpRatio > 0.5)
+        {
+            giantState = GiantState.Idle;
+        }
+        else if (hpRatio <= 0.5)
+        {
+            GetComponent<SpriteRenderer>().color = Color.red;
+            giantState = GiantState.Berserk;
+        }
+
     }
 
     public void SpawnKnife()
