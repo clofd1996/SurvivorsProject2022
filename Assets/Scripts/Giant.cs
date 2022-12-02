@@ -9,7 +9,8 @@ public class Giant : Enemy
         Idle = 0,
         Chasing = 1,
         Attacking = 2,
-        Berserk = 3
+        Injury = 3,
+        Berserk = 4
     }
 
     [SerializeField] GameObject knifePrefab;
@@ -51,14 +52,23 @@ public class Giant : Enemy
                 giantState = GiantState.Idle;
                 waitTimer = 5f;
                 break;
-            case GiantState.Berserk:
-                animator.SetTrigger("Attack");
-                waitTimer = 5f;
-                waitTimer -= Time.deltaTime;
-                if (waitTimer <= 0)
+            case GiantState.Injury:
+                base.Update();
+                float hpRatio = (float)player.playerHP / player.maxHP;
+                if (hpRatio < 0.5)
                 {
                     giantState = GiantState.Berserk;
                 }
+                break;
+            case GiantState.Berserk:
+                base.Update();
+                animator.SetTrigger("Attack");
+                //waitTimer = 5f;
+                //waitTimer -= Time.deltaTime;
+                //if (waitTimer <= 0)
+                //{
+                //    giantState = GiantState.Berserk;
+                //}
                 break;
             default:
                 break;
