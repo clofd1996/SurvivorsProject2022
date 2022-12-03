@@ -11,7 +11,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] protected float HP = 2; //怪物HP
     [SerializeField] protected float MaxHP = 2; //怪物最大HP
 
-    [SerializeField] protected TMP_Text damageNumber; // 伤害数字
+    [SerializeField] GameObject damageNumber; // 伤害数字
     public int enemyDamage = 1;
     public bool isTrackingPlayer = true;
     protected GameObject player; //定义一下GameObject具体是什么
@@ -56,10 +56,10 @@ public class Enemy : MonoBehaviour
 
     public virtual void Damage(int damage)
     {
-        HP -= damage;
-        damageNumber.text = damage.ToString();
-        Instantiate(damageNumber, transform.position, Quaternion.identity);
-
+        GameObject gb = Instantiate(damageNumber, transform.position, Quaternion.identity) as GameObject; // 生成伤害值气泡
+        gb.transform.GetChild(0).GetComponent<TextMesh>().text = damage.ToString();
+        HP -= damage;     
+        
         if (HP <= 0)
         {
             Instantiate(expPrefab, transform.position, Quaternion.identity); //生成exp道具
