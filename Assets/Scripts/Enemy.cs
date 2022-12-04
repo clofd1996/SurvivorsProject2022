@@ -72,6 +72,10 @@ public class Enemy : MonoBehaviour
                 transformPlace += 0.2f *insideUnitCircle;
                 Instantiate(coinPrefab, transformPlace, Quaternion.identity); //生成金币道具
             }
+
+            // 死亡计数
+
+
             Destroy(gameObject);
         }
     }
