@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject giant;
     [SerializeField] GameObject player;
     [SerializeField] float spawnDistance = 8f;
+    [SerializeField] TMP_Text CoinNumber;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +21,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        // ”Œœ∑ ±÷”
         int seconds = 60+(int)Time.time;
         int minutes = -1;
 

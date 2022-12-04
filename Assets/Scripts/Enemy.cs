@@ -7,10 +7,11 @@ using TMPro;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] GameObject expPrefab; //经验prefab
+    [SerializeField] GameObject coinPrefab; //金币prefab
     [SerializeField] float speed = 1f; //怪物速度
     [SerializeField] protected float HP = 2; //怪物HP
     [SerializeField] protected float MaxHP = 2; //怪物最大HP
-
+    [Range(0f, 100f)] public float dropPercentage; //掉落概率
     [SerializeField] GameObject damageNumber; // 伤害数字
     public int enemyDamage = 1;
     public bool isTrackingPlayer = true;
@@ -62,16 +63,17 @@ public class Enemy : MonoBehaviour
         
         if (HP <= 0)
         {
-            Instantiate(expPrefab, transform.position, Quaternion.identity); //生成exp道具
+            Vector2 transformPlace = transform.position;
+            Instantiate(expPrefab, transformPlace, Quaternion.identity); //生成exp道具
+
+            if (UnityEngine.Random.Range(0f,100f) <= dropPercentage)
+            {
+                Vector2 insideUnitCircle = UnityEngine.Random.insideUnitCircle;
+                transformPlace += 0.2f *insideUnitCircle;
+                Instantiate(coinPrefab, transformPlace, Quaternion.identity); //生成金币道具
+            }
             Destroy(gameObject);
         }
     }
 
-    void SpawnDamageNumber(TMP_Text damageText, int damage)
-    {
-        Vector3 spawnPosition = UnityEngine.Random.insideUnitCircle.normalized * 0.1f;
-        spawnPosition += transform.position;
-
-        //Instantiate(damageText, spawnPosition, Quaternion.identity);
-    }
 }

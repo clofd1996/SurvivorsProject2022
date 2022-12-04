@@ -133,9 +133,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   expPrefab: {fileID: 2304657266745190885, guid: f34f820df22cc954ca544f460ab3b93f, type: 3}
+  coinPrefab: {fileID: 3889737469261826054, guid: 1985c697ad1e3a24f89d905705e9e1d9, type: 3}
   speed: 2
   HP: 10
   MaxHP: 10
+  dropPercentage: 60
   damageNumber: {fileID: 2365404541973262386, guid: 6d83554ed2c66a04cb1658930a501525, type: 3}
   enemyDamage: 1
   isTrackingPlayer: 1

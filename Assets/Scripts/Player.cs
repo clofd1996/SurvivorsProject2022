@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     [SerializeField] SpriteRenderer spriteRenderer;
     [SerializeField] BaseWeapon[] weapons;
     [SerializeField] TMP_Text playerLevel;
+    [SerializeField] TMP_Text CoinNumber;
 
 
 
@@ -29,6 +30,12 @@ public class Player : MonoBehaviour
             weapons[0].LevelUp();
             weapons[1].LevelUp();
         }
+    }
+
+    internal int coin = 0;
+    internal void AddCoin()
+    {
+        coin++;
     }
 
     [SerializeField] Animator animator;
@@ -109,6 +116,9 @@ public class Player : MonoBehaviour
     {
         //计算角色等级
         playerLevel.text = "Level  " + currentLevel.ToString();
+
+        //计算角色获得金币
+        CoinNumber.text = coin.ToString();
 
         //控制移动速度 controll speed
         float inputX = Input.GetAxisRaw("Horizontal");
