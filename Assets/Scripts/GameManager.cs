@@ -11,7 +11,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject red;
     [SerializeField] GameObject giant;
     [SerializeField] GameObject player;
-    [SerializeField] float spawnDistance = 8f;
 
     // Start is called before the first frame update
     void Start()

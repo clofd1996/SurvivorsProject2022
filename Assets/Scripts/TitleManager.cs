@@ -18,6 +18,8 @@ public class TitleManager : MonoBehaviour
             Load();
         else
             Save();
+
+        Debug.Log($"goldCoins:{saveData.coinsGetten}, deathCounter:{saveData.deathCount}");
     }
 
     void Load()
