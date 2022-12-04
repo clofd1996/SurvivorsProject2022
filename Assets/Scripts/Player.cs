@@ -12,6 +12,9 @@ public class Player : MonoBehaviour
     [SerializeField] TMP_Text playerLevel;
     [SerializeField] TMP_Text CoinNumber;
 
+    public int playerHP;
+    public int maxHP;
+
 
 
     //经验相关
@@ -27,6 +30,9 @@ public class Player : MonoBehaviour
             currentExp -= expToLevel;
             expToLevel += 5;
             currentLevel++;
+            //调整HP
+            maxHP += 5; //最大HP增加5
+            playerHP = maxHP; //把血量回满
             weapons[0].LevelUp();
             weapons[1].LevelUp();
         }
@@ -40,8 +46,7 @@ public class Player : MonoBehaviour
 
     [SerializeField] Animator animator;
 
-    public int playerHP;
-    public int maxHP = 10;
+    
 
     public float GetHpRatio()
     {
