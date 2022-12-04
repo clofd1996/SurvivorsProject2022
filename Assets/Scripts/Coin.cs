@@ -10,6 +10,7 @@ public class Coin : MonoBehaviour
         if (player)
         {
             player.AddCoin();
+            TitleManager.saveData.coinsGetten++;
             Destroy(gameObject);
         }
     }

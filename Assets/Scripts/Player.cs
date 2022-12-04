@@ -12,6 +12,9 @@ public class Player : MonoBehaviour
     [SerializeField] TMP_Text playerLevel;
     [SerializeField] TMP_Text CoinNumber;
 
+    [SerializeField] TMP_Text PauseLevel;
+    [SerializeField] TMP_Text PauseHP;
+
     public int playerHP;
     public int maxHP;
 
@@ -110,9 +113,10 @@ public class Player : MonoBehaviour
         playerHP -= damage;
 
         if (playerHP <= 0)
-        {            
+        {
+            TitleManager.saveData.deathCount++;
             Destroy(gameObject);
-            GetComponent<GameOver>().ShowDeathScreen();
+            GetComponent<GameOverManager>().ShowDeathScreen();
         }
     }
 
@@ -124,6 +128,10 @@ public class Player : MonoBehaviour
 
         //计算角色获得金币
         CoinNumber.text = coin.ToString();
+
+        //计算暂停界面数据
+        PauseLevel.text = "Level: " + currentLevel.ToString();
+        PauseHP.text = "HP: " + playerHP.ToString() + " / " + maxHP.ToString();
 
         //控制移动速度 controll speed
         float inputX = Input.GetAxisRaw("Horizontal");
