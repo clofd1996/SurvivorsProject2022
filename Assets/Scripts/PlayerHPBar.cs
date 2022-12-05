@@ -21,5 +21,6 @@ public class PlayerHPBar : MonoBehaviour
         float hpRatio = (float)player.playerHP / player.maxHP;
 
         foreground.transform.localScale = new Vector3(hpRatio, 1, 1);
+        
     }
 }

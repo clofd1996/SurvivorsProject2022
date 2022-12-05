@@ -1,17 +1,36 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameOverManager : MonoBehaviour
 {
+
+    // Singleton»¯
+    private static GameOverManager instance;
+
+    public static GameOverManager GetInstance()
+    {
+        return instance;
+    }
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
     public GameObject gameOverPanel;
+    public GameObject ResumeButtom;
+    public TMP_Text gameOverPanelText;
     public bool gameIsPaused = false;
 
     public void ShowDeathScreen()
     {
         //Debug.Log("Game Over");
         gameOverPanel.SetActive(true);
+        ResumeButtom.SetActive(false);
+        gameOverPanelText.text = "Game Over";
     }
 
     void Update()

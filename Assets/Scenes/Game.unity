@@ -607,7 +607,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.15686275}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.23529412}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -7173,7 +7173,7 @@ GameObject:
   - component: {fileID: 856917801}
   - component: {fileID: 856917800}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: GameOverPanelText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13607,6 +13607,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverPanel: {fileID: 198883679}
+  ResumeButtom: {fileID: 370131950}
+  gameOverPanelText: {fileID: 856917800}
   gameIsPaused: 0
 --- !u!4 &1866454253
 Transform:

@@ -18,6 +18,8 @@ public class Player : MonoBehaviour
     public int playerHP;
     public int maxHP;
 
+    //public bool playerIsDead = false;
+
 
 
     //经验相关
@@ -115,9 +117,12 @@ public class Player : MonoBehaviour
 
         if (playerHP <= 0)
         {
+            //playerIsDead = true;
             TitleManager.saveData.deathCount++;
-            Destroy(gameObject);
-            GetComponent<GameOver>().ShowDeathScreen();
+            //Destroy(gameObject); // 不destroy player了
+            Time.timeScale = 0.0f; //暂停时间
+            GameOverManager.GetInstance().ShowDeathScreen();
+            //GetComponent<GameOverManager>().ShowDeathScreen();
         }
     }
 
