@@ -76,6 +76,7 @@ public class TitleManager : MonoBehaviour
     public void OnStartButtonClick()
     {
         SceneManager.LoadScene("Game");
+        Time.timeScale = 1.0f;
     }
 
     public void OnUpgradeButtonClick()

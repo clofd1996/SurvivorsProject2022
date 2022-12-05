@@ -6,11 +6,41 @@ using UnityEngine.SceneManagement;
 public class GameOverManager : MonoBehaviour
 {
     public GameObject gameOverPanel;
+    public bool gameIsPaused = false;
 
     public void ShowDeathScreen()
     {
-        Debug.Log("Game Over");
+        //Debug.Log("Game Over");
         gameOverPanel.SetActive(true);
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (gameIsPaused)
+            {
+                Resume();
+            }
+            else
+            {
+                Pause();
+            }
+        }
+    }
+
+    public void Resume()
+    {
+        gameOverPanel.SetActive(false);
+        Time.timeScale = 1.0f;
+        gameIsPaused = false;
+    }
+
+    public void Pause()
+    {
+        gameOverPanel.SetActive(true);
+        Time.timeScale = 0.0f;
+        gameIsPaused = true;
     }
 
 
@@ -21,6 +51,6 @@ public class GameOverManager : MonoBehaviour
 
     public void OnResumeButtonClick()
     {
-        gameOverPanel.SetActive(false); // 点击Resume按钮可以回到游戏
+        Resume();
     }
 }

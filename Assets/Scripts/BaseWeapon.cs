@@ -12,9 +12,5 @@ public class BaseWeapon : MonoBehaviour
         {
             gameObject.SetActive(true);
         }
-
-        
-
-
     }
 }

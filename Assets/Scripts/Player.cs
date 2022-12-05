@@ -28,7 +28,7 @@ public class Player : MonoBehaviour
     internal void AddExp()
     {
         currentExp++;
-        if (currentExp >= expToLevel)
+        if (currentExp >= expToLevel)// 升级
         {
             currentExp -= expToLevel;
             expToLevel += 5;
@@ -36,8 +36,9 @@ public class Player : MonoBehaviour
             //调整HP
             maxHP += 5; //最大HP增加5
             playerHP = maxHP; //把血量回满
-            weapons[0].LevelUp();
-            weapons[1].LevelUp();
+
+            weapons[0].LevelUp(); //Kanata 升级
+            weapons[1].LevelUp(); //Scythe 升级
         }
     }
 
@@ -116,7 +117,7 @@ public class Player : MonoBehaviour
         {
             TitleManager.saveData.deathCount++;
             Destroy(gameObject);
-            GetComponent<GameOverManager>().ShowDeathScreen();
+            GetComponent<GameOver>().ShowDeathScreen();
         }
     }
 
