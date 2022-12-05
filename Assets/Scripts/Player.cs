@@ -14,6 +14,8 @@ public class Player : MonoBehaviour
 
     [SerializeField] TMP_Text PauseLevel;
     [SerializeField] TMP_Text PauseHP;
+    [SerializeField] TMP_Text PauseCoin;
+    [SerializeField] TMP_Text PauseEXP;
 
     public int playerHP;
     public int maxHP;
@@ -24,12 +26,14 @@ public class Player : MonoBehaviour
 
     //经验相关
     internal int currentExp = 0;
+    internal int totalExp = 0;
     internal int expToLevel = 5;
     internal int currentLevel = 1;
 
     internal void AddExp()
     {
         currentExp++;
+        totalExp++;
         if (currentExp >= expToLevel)// 升级
         {
             currentExp -= expToLevel;
@@ -138,6 +142,9 @@ public class Player : MonoBehaviour
         //计算暂停界面数据
         PauseLevel.text = "Level: " + currentLevel.ToString();
         PauseHP.text = "HP: " + playerHP.ToString() + " / " + maxHP.ToString();
+        PauseCoin.text = coin.ToString();
+        PauseEXP.text = totalExp.ToString();
+
 
         //控制移动速度 controll speed
         float inputX = Input.GetAxisRaw("Horizontal");

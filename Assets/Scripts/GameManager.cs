@@ -12,6 +12,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject giant;
     [SerializeField] GameObject player;
 
+    [SerializeField] TMP_Text BlueNumber;
+
+    private int bluenumber = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -53,6 +56,15 @@ public class GameManager : MonoBehaviour
             spawnPosition += player.transform.position;
 
             Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
+        }
+    }
+
+    public void CourtEnemies(GameObject enemyPrefab)
+    {
+        if (enemyPrefab.tag == "blue")
+        {
+            bluenumber++;
+            BlueNumber.text = bluenumber.ToString();
         }
     }
 
