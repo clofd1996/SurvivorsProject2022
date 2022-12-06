@@ -88,6 +88,10 @@ public class Giant : Enemy
 
     public void SpawnKnife()
     {
-        Instantiate(knifePrefab, transform.position, Quaternion.identity);
+        //Instantiate(knifePrefab, transform.position, Quaternion.identity);
+        var knifePrefab = PoolManager.GetInstance().giantknifepool.Get();
+        knifePrefab.transform.position = transform.position;
+        knifePrefab.transform.rotation = Quaternion.identity;
+        knifePrefab.SetActive(true);
     }
 }

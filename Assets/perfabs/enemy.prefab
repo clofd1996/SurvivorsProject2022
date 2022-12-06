@@ -19,7 +19,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5500073038363855916
 Transform:
   m_ObjectHideFlags: 0
@@ -155,4 +155,3 @@ MonoBehaviour:
   damageNumber: {fileID: 2365404541973262386, guid: 6d83554ed2c66a04cb1658930a501525, type: 3}
   enemyDamage: 1
   isTrackingPlayer: 1
-  exppool: {fileID: 0}

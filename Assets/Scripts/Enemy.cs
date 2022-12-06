@@ -73,7 +73,7 @@ public class Enemy : MonoBehaviour
             //Instantiate(expPrefab, transformPlace, Quaternion.identity); 
 
             //var expPrefab = exppool.Get();
-            var expPrefab = GameManager.GetInstance().exppool.Get();
+            var expPrefab = PoolManager.GetInstance().exppool.Get();
             expPrefab.transform.position = transformPlace;
             expPrefab.transform.rotation = Quaternion.identity;
             expPrefab.SetActive(true);
@@ -84,7 +84,7 @@ public class Enemy : MonoBehaviour
                 Vector2 insideUnitCircle = UnityEngine.Random.insideUnitCircle;
                 transformPlace += 0.2f *insideUnitCircle;
                 //Instantiate(coinPrefab, transformPlace, Quaternion.identity); 
-                var coinPrefab = GameManager.GetInstance().coinpool.Get();
+                var coinPrefab = PoolManager.GetInstance().coinpool.Get();
                 coinPrefab.transform.position = transformPlace;
                 coinPrefab.transform.rotation = Quaternion.identity;
                 coinPrefab.SetActive(true);
@@ -92,7 +92,8 @@ public class Enemy : MonoBehaviour
 
             GameManager.GetInstance().CourtEnemies(gameObject);
 
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 

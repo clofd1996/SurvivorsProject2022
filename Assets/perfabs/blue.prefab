@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: blue
       objectReference: {fileID: 0}
+    - target: {fileID: 1473771098973607265, guid: 34cafaae9a0260e439d9b1fd73168b40, type: 3}
+      propertyPath: m_TagString
+      value: blue
+      objectReference: {fileID: 0}
     - target: {fileID: 5500073038363855916, guid: 34cafaae9a0260e439d9b1fd73168b40, type: 3}
       propertyPath: m_RootOrder
       value: 0

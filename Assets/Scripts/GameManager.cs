@@ -10,10 +10,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject green;
     [SerializeField] GameObject red;
     [SerializeField] GameObject giant;
-    [SerializeField] GameObject player;
-
-    public SimpleObjectPool exppool;
-    public SimpleObjectPool coinpool;
+    [SerializeField] GameObject player;    
 
     [SerializeField] TMP_Text BlueNumber;
     [SerializeField] TMP_Text GreenNumber;
@@ -80,30 +77,34 @@ public class GameManager : MonoBehaviour
             spawnPosition += player.transform.position;
 
             Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
+            //var enemyprefab = PoolManager.GetInstance().enemypool.Get();
+            //enemyprefab.transform.position = spawnPosition;
+            //enemyprefab.transform.rotation = Quaternion.identity;
+            //enemyprefab.SetActive(true);
         }
     }
 
     public void CourtEnemies(GameObject enemyPrefab)
     {
-        if (enemyPrefab.name == "blue(Clone)")
+        if (enemyPrefab.tag == "blue")
         {
             bluenumber++;
             BlueNumber.text = bluenumber.ToString();
         }
 
-        else if (enemyPrefab.name == "green(Clone)")
+        else if (enemyPrefab.tag == "green")
         {
             greennumber++;
             GreenNumber.text = greennumber.ToString();
         }
 
-        else if (enemyPrefab.name == "red(Clone)")
+        else if (enemyPrefab.tag == "red")
         {
             rednumber++;
             RedNumber.text = rednumber.ToString();
         }
 
-        else if (enemyPrefab.name == "giant(Clone)")
+        else if (enemyPrefab.tag == "giant")
         {
             giantnumber++;
             GiantNumber.text = giantnumber.ToString();
