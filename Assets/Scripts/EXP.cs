@@ -11,7 +11,8 @@ public class EXP : MonoBehaviour
         {
             player.AddExp();
             TitleManager.saveData.expGetten++;
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 }

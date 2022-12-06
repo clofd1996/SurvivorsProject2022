@@ -18,6 +18,7 @@ public class Enemy : MonoBehaviour
     protected GameObject player; //定义一下GameObject具体是什么
 
 
+
     // Start is called before the first frame update
     protected virtual void Start()
     {
@@ -68,7 +69,14 @@ public class Enemy : MonoBehaviour
         if (HP <= 0)
         {
             Vector2 transformPlace = transform.position;
-            Instantiate(expPrefab, transformPlace, Quaternion.identity); //生成exp道具
+            //生成exp道具
+            //Instantiate(expPrefab, transformPlace, Quaternion.identity); 
+
+            //var expPrefab = exppool.Get();
+            var expPrefab = GameManager.GetInstance().exppool.Get();
+            expPrefab.transform.position = transformPlace;
+            expPrefab.transform.rotation = Quaternion.identity;
+            expPrefab.SetActive(true);
 
             if (UnityEngine.Random.Range(0f,100f) <= dropPercentage)
             {

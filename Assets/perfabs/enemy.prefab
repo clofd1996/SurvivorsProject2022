@@ -155,3 +155,4 @@ MonoBehaviour:
   damageNumber: {fileID: 2365404541973262386, guid: 6d83554ed2c66a04cb1658930a501525, type: 3}
   enemyDamage: 1
   isTrackingPlayer: 1
+  exppool: {fileID: 0}

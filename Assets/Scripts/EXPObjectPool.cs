@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SimpleObjectPool : MonoBehaviour
+public class EXPObjectPool : MonoBehaviour
 {
     [SerializeField] GameObject objectPrefab;
 
@@ -12,7 +12,7 @@ public class SimpleObjectPool : MonoBehaviour
 
     private void Awake()
     {
-        for (int i = 0; i <500 ; i++)
+        for (int i = 0; i < 500; i++)
         {
             pooledObjects.Add(Instantiate(objectPrefab));
         }
