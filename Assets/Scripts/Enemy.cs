@@ -17,16 +17,6 @@ public class Enemy : MonoBehaviour
     public bool isTrackingPlayer = true;
     protected GameObject player; //定义一下GameObject具体是什么
 
-    [SerializeField] TMP_Text BlueNumber;
-    [SerializeField] TMP_Text GreenNumber;
-    [SerializeField] TMP_Text RedNumber;
-    [SerializeField] TMP_Text GiantNumber;
-
-    private int bluenumber = 0;
-    private int greennumber = 0;
-    private int rednumber = 0;
-    private int giantnumber = 0;
-
 
     // Start is called before the first frame update
     protected virtual void Start()
@@ -87,18 +77,7 @@ public class Enemy : MonoBehaviour
                 Instantiate(coinPrefab, transformPlace, Quaternion.identity); //生成金币道具
             }
 
-            //GameManager gamemanager = new GameManager();
-            //gamemanager.CourtEnemies(gameObject);
-
-            //GetComponent<GameManager>().CourtEnemies(gameObject);
-
-
-            // 死亡计数
-            //if (gameObject.name == "blue")
-            //{
-            //    bluenumber++;
-            //    BlueNumber.text = bluenumber.ToString();
-            //}
+            GameManager.GetInstance().CourtEnemies(gameObject);
 
             Destroy(gameObject);
         }

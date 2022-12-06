@@ -13,8 +13,29 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject player;
 
     [SerializeField] TMP_Text BlueNumber;
+    [SerializeField] TMP_Text GreenNumber;
+    [SerializeField] TMP_Text RedNumber;
+    [SerializeField] TMP_Text GiantNumber;
 
     private int bluenumber = 0;
+    private int greennumber = 0;
+    private int rednumber = 0;
+    private int giantnumber = 0;
+
+    // Singleton»¯
+    private static GameManager instance;
+
+    public static GameManager GetInstance()
+    {
+        return instance;
+    }
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -61,10 +82,28 @@ public class GameManager : MonoBehaviour
 
     public void CourtEnemies(GameObject enemyPrefab)
     {
-        if (enemyPrefab.tag == "blue")
+        if (enemyPrefab.name == "blue(Clone)")
         {
             bluenumber++;
             BlueNumber.text = bluenumber.ToString();
+        }
+
+        else if (enemyPrefab.name == "green(Clone)")
+        {
+            greennumber++;
+            GreenNumber.text = greennumber.ToString();
+        }
+
+        else if (enemyPrefab.name == "red(Clone)")
+        {
+            rednumber++;
+            RedNumber.text = rednumber.ToString();
+        }
+
+        else if (enemyPrefab.name == "giant(Clone)")
+        {
+            giantnumber++;
+            GiantNumber.text = giantnumber.ToString();
         }
     }
 
