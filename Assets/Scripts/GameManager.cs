@@ -12,7 +12,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject giant;
     [SerializeField] GameObject player;
 
-    public EXPObjectPool exppool;
+    public SimpleObjectPool exppool;
+    public SimpleObjectPool coinpool;
 
     [SerializeField] TMP_Text BlueNumber;
     [SerializeField] TMP_Text GreenNumber;

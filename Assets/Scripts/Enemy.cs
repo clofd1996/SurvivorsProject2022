@@ -80,9 +80,14 @@ public class Enemy : MonoBehaviour
 
             if (UnityEngine.Random.Range(0f,100f) <= dropPercentage)
             {
+                //生成金币道具
                 Vector2 insideUnitCircle = UnityEngine.Random.insideUnitCircle;
                 transformPlace += 0.2f *insideUnitCircle;
-                Instantiate(coinPrefab, transformPlace, Quaternion.identity); //生成金币道具
+                //Instantiate(coinPrefab, transformPlace, Quaternion.identity); 
+                var coinPrefab = GameManager.GetInstance().coinpool.Get();
+                coinPrefab.transform.position = transformPlace;
+                coinPrefab.transform.rotation = Quaternion.identity;
+                coinPrefab.SetActive(true);
             }
 
             GameManager.GetInstance().CourtEnemies(gameObject);

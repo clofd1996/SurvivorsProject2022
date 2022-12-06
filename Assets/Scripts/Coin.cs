@@ -11,7 +11,8 @@ public class Coin : MonoBehaviour
         {
             player.AddCoin();
             TitleManager.saveData.coinsGetten++;
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 }
