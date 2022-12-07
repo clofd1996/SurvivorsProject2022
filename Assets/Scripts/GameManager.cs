@@ -76,11 +76,38 @@ public class GameManager : MonoBehaviour
             Vector3 spawnPosition = Random.insideUnitCircle.normalized * 8;
             spawnPosition += player.transform.position;
 
-            Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
-            //var enemyprefab = PoolManager.GetInstance().enemypool.Get();
-            //enemyprefab.transform.position = spawnPosition;
-            //enemyprefab.transform.rotation = Quaternion.identity;
-            //enemyprefab.SetActive(true);
+            //Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
+            if (enemyPrefab == blue)
+            {
+                var enemyprefab = PoolManager.GetInstance().bluepool.Get();
+                enemyprefab.transform.position = spawnPosition;
+                enemyprefab.transform.rotation = Quaternion.identity;
+                enemyprefab.SetActive(true);
+            }
+
+            else if (enemyPrefab == green)
+            {
+                var enemyprefab = PoolManager.GetInstance().greenpool.Get();
+                enemyprefab.transform.position = spawnPosition;
+                enemyprefab.transform.rotation = Quaternion.identity;
+                enemyprefab.SetActive(true);
+            }
+
+            else if (enemyPrefab == red)
+            {
+                var enemyprefab = PoolManager.GetInstance().redpool.Get();
+                enemyprefab.transform.position = spawnPosition;
+                enemyprefab.transform.rotation = Quaternion.identity;
+                enemyprefab.SetActive(true);
+            }
+
+            else if (enemyPrefab == giant)
+            {
+                var enemyprefab = PoolManager.GetInstance().giantpool.Get();
+                enemyprefab.transform.position = spawnPosition;
+                enemyprefab.transform.rotation = Quaternion.identity;
+                enemyprefab.SetActive(true);
+            }
         }
     }
 

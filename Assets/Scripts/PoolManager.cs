@@ -6,8 +6,12 @@ public class PoolManager : MonoBehaviour
 {
     public SimpleObjectPool exppool;
     public SimpleObjectPool coinpool;
-    //public SimpleObjectPool enemypool;
     public SimpleObjectPool giantknifepool;
+
+    public SimpleObjectPool bluepool;
+    public SimpleObjectPool greenpool;
+    public SimpleObjectPool redpool;
+    public SimpleObjectPool giantpool;
 
     // Singleton»¯
     private static PoolManager instance;
