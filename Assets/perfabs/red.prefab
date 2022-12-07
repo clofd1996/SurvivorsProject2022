@@ -7,9 +7,53 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -4079460127661261988, guid: 34cafaae9a0260e439d9b1fd73168b40, type: 3}
+      propertyPath: HP
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: -4079460127661261988, guid: 34cafaae9a0260e439d9b1fd73168b40, type: 3}
+      propertyPath: MaxHP
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: -4079460127661261988, guid: 34cafaae9a0260e439d9b1fd73168b40, type: 3}
+      propertyPath: isBoss
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4079460127661261988, guid: 34cafaae9a0260e439d9b1fd73168b40, type: 3}
+      propertyPath: enemyDamage
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -4079460127661261988, guid: 34cafaae9a0260e439d9b1fd73168b40, type: 3}
+      propertyPath: dropPercentage
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 1473771098973607265, guid: 34cafaae9a0260e439d9b1fd73168b40, type: 3}
       propertyPath: m_Name
       value: red
+      objectReference: {fileID: 0}
+    - target: {fileID: 1473771098973607265, guid: 34cafaae9a0260e439d9b1fd73168b40, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1473771098973607265, guid: 34cafaae9a0260e439d9b1fd73168b40, type: 3}
+      propertyPath: m_TagString
+      value: red
+      objectReference: {fileID: 0}
+    - target: {fileID: 2435926853161296342, guid: 34cafaae9a0260e439d9b1fd73168b40, type: 3}
+      propertyPath: m_Size.x
+      value: 1.0836616
+      objectReference: {fileID: 0}
+    - target: {fileID: 2435926853161296342, guid: 34cafaae9a0260e439d9b1fd73168b40, type: 3}
+      propertyPath: m_Size.y
+      value: 0.6829695
+      objectReference: {fileID: 0}
+    - target: {fileID: 2435926853161296342, guid: 34cafaae9a0260e439d9b1fd73168b40, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.0034592152
+      objectReference: {fileID: 0}
+    - target: {fileID: 2435926853161296342, guid: 34cafaae9a0260e439d9b1fd73168b40, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.14569715
       objectReference: {fileID: 0}
     - target: {fileID: 2435926853161296342, guid: 34cafaae9a0260e439d9b1fd73168b40, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x

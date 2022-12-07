@@ -6,6 +6,7 @@ using TMPro;
 
 public class Enemy : MonoBehaviour
 {
+    [SerializeField] bool isBoss; //判断是不是boss
     [SerializeField] GameObject expPrefab; //经验prefab
     [SerializeField] GameObject coinPrefab; //金币prefab
     [SerializeField] float speed = 1f; //怪物速度
@@ -32,7 +33,11 @@ public class Enemy : MonoBehaviour
         if (player != null)
         {
             player.Damage(enemyDamage); //碰撞造成 Enemy Damage = 1点伤害
-            gameObject.SetActive(false); //怪物碰撞后消失
+            if (gameObject.tag != "red") // 只要不是Boss(red)
+            {
+                gameObject.SetActive(false); //怪物碰撞后消失
+            }
+           
         }
     }
 

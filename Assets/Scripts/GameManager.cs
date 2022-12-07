@@ -147,8 +147,8 @@ public class GameManager : MonoBehaviour
             SpawnEnemies(blue, 5);
             yield return new WaitForSeconds(3f);
             SpawnEnemies(giant, 3);
-            //yield return new WaitForSeconds(7f);
-            //SpawnEnemies(red, 1);
+            yield return new WaitForSeconds(7f);
+            SpawnEnemies(red, 1);
             yield return new WaitForSeconds(5f);
             SpawnEnemies(blue, 5, isWaveTracking: false);
             SpawnEnemies(green, 5);
