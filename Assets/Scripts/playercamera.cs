@@ -10,7 +10,7 @@ public class playercamera : MonoBehaviour
     [SerializeField] public float cameraspeed = 5f;
 
 
-    Player player;          
+    Player player;
     Volume volume;
     Vignette vignette;
     ColorAdjustments coloradjustments;
@@ -18,10 +18,11 @@ public class playercamera : MonoBehaviour
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-        volume = GetComponent<Volume>();
-        volume.profile.TryGet(out vignette);
-        volume.profile.TryGet(out coloradjustments);
-        
+        volume = GetComponent<Volume>(); //这个最基本的GetComponent
+        // out是必须的
+        volume.profile.TryGet(out vignette); //从volume这个profile中 调用vignette这个override
+        volume.profile.TryGet(out coloradjustments); //从volume这个profile中 调用coloradjustments这个override
+
     }
 
     // Update is called once per frame
@@ -31,9 +32,9 @@ public class playercamera : MonoBehaviour
         vignette.intensity.Override(intensity);
 
 
-        if (player == null)
+        if (player.playerHP <= 0) 
         {
-            coloradjustments.saturation.Override(-100);
+            coloradjustments.saturation.Override(-100); //黑白画面
             return;
 
         }

@@ -58,7 +58,7 @@ public class Player : MonoBehaviour
 
     
 
-    public float GetHpRatio()
+    public float GetHpRatio() //用来添加Camera流血效果的
     {
         return (float)playerHP / maxHP;
     }
@@ -79,21 +79,6 @@ public class Player : MonoBehaviour
         
     }
 
-    
-
-    //IEnumerator SwordCoroutine() //自动激活武器
-    //{
-    //   while (this != null)
-    //    {
-    //        weapons.SetActive(true);
-    //
-    //        yield return new WaitForSeconds(0.5f);
-
-    //        weapons.SetActive(false);
-
-    //        yield return new WaitForSeconds(1f);
-    //    }
-    //}
 
     public bool OnDamage()
     {
@@ -121,12 +106,10 @@ public class Player : MonoBehaviour
 
         if (playerHP <= 0)
         {
-            //playerIsDead = true;
             TitleManager.saveData.deathCount++;
             //Destroy(gameObject); // 不destroy player了
             Time.timeScale = 0.0f; //暂停时间
             GameOverManager.GetInstance().ShowDeathScreen();
-            //GetComponent<GameOverManager>().ShowDeathScreen();
         }
     }
 
