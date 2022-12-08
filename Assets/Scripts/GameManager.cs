@@ -17,6 +17,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] TMP_Text RedNumber;
     [SerializeField] TMP_Text GiantNumber;
 
+    [SerializeField] GameObject CounterPanel;
+    [SerializeField] TMP_Text ResumeNumber;
+
     private int bluenumber = 0;
     private int greennumber = 0;
     private int rednumber = 0;
@@ -147,7 +150,7 @@ public class GameManager : MonoBehaviour
             SpawnEnemies(blue, 5);
             yield return new WaitForSeconds(3f);
             SpawnEnemies(giant, 3);
-            yield return new WaitForSeconds(7f);
+            yield return new WaitForSeconds(2f);
             SpawnEnemies(red, 1);
             yield return new WaitForSeconds(5f);
             SpawnEnemies(blue, 5, isWaveTracking: false);
@@ -173,6 +176,21 @@ public class GameManager : MonoBehaviour
             //SpawnEnemies(blue, 30);
             //SpawnEnemies(blue, 20, isWaveTracking: false);
         }
+    }
+
+    public void ActiveCounter()
+    {
+        CounterPanel.SetActive(true);
+    }
+
+    public void DetiveCounter()
+    {
+        CounterPanel.SetActive(false);
+    }
+
+    public void ChangeCounter(string number)
+    {
+        ResumeNumber.text = number;
     }
 
 }
