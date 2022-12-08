@@ -8,12 +8,15 @@ public class playercamera : MonoBehaviour
 {
     [SerializeField] public Transform target;
     [SerializeField] public float cameraspeed = 5f;
-
+    [SerializeField] GameObject pausepanel;
 
     Player player;
     Volume volume;
     Vignette vignette;
     ColorAdjustments coloradjustments;
+    DepthOfField blur;
+
+
 
     private void Start()
     {
@@ -22,7 +25,7 @@ public class playercamera : MonoBehaviour
         // out是必须的
         volume.profile.TryGet(out vignette); //从volume这个profile中 调用vignette这个override
         volume.profile.TryGet(out coloradjustments); //从volume这个profile中 调用coloradjustments这个override
-
+        volume.profile.TryGet(out blur); //从volume这个profile中 调用depth of field这个override        
     }
 
     // Update is called once per frame
@@ -30,6 +33,16 @@ public class playercamera : MonoBehaviour
     {
         float intensity = 0.5f * (1 - player.GetHpRatio());
         vignette.intensity.Override(intensity);
+
+        if (pausepanel.activeInHierarchy == true) // 当暂停面板激活时，把镜头模糊的焦距调整到80
+        {
+            blur.focalLength.Override(80);
+        }
+
+        else if (pausepanel.activeInHierarchy == false) // 当暂停面板激活时，把镜头模糊的焦距调整到1
+        {
+            blur.focalLength.Override(1);
+        }
 
 
         if (player.playerHP <= 0) 

@@ -191,5 +191,4 @@ public class GameManager : MonoBehaviour
     {
         ResumeNumber.text = number;
     }
-
 }
