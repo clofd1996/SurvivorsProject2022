@@ -17,7 +17,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] TMP_Text RedNumber;
     [SerializeField] TMP_Text GiantNumber;
 
-    [SerializeField] GameObject CounterPanel;
     [SerializeField] TMP_Text ResumeNumber;
 
     private int bluenumber = 0;
@@ -180,12 +179,12 @@ public class GameManager : MonoBehaviour
 
     public void ActiveCounter()
     {
-        CounterPanel.SetActive(true);
+        ResumeNumber.gameObject.SetActive(true);
     }
 
     public void DetiveCounter()
     {
-        CounterPanel.SetActive(false);
+        ResumeNumber.gameObject.SetActive(false);
     }
 
     public void ChangeCounter(string number)
