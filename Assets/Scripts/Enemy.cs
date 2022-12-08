@@ -18,12 +18,53 @@ public class Enemy : MonoBehaviour
     public bool isTrackingPlayer = true;
     protected GameObject player; //定义一下GameObject具体是什么
 
-
-
     // Start is called before the first frame update
     protected virtual void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player"); //定义下面update里player具体指代什么
+        if (isBoss)
+        {
+            StartCoroutine(BossCameraCoroutine());
+        }
+    }
+
+    IEnumerator BossCameraCoroutine()
+    {
+        //Pause Time
+        Time.timeScale = 0;
+
+        //Find the PlayerScript on the camera and change the target to the boss
+        Camera.main.GetComponent<playercamera>().target = transform;
+
+        yield return new WaitForSecondsRealtime(1f);
+        Camera.main.orthographicSize = 4.5f;
+        yield return new WaitForSecondsRealtime(1f);
+        Camera.main.orthographicSize = 4f;
+        yield return new WaitForSecondsRealtime(1f);
+        Camera.main.orthographicSize = 3.5f;
+        yield return new WaitForSecondsRealtime(1f);
+        Camera.main.orthographicSize = 3f;
+
+        //Wait for a few real time seconds
+        yield return new WaitForSecondsRealtime(1f);
+
+        //Change the target back to the player
+        Camera.main.GetComponent<playercamera>().target = player.transform;
+
+        Camera.main.orthographicSize = 5;
+
+        //Wait for a few real time seconds
+        GameManager.GetInstance().ActiveCounter();
+        yield return new WaitForSecondsRealtime(1f);
+        GameManager.GetInstance().ChangeCounter("2");
+        yield return new WaitForSecondsRealtime(1f);
+        GameManager.GetInstance().ChangeCounter("1");
+        yield return new WaitForSecondsRealtime(1f);
+        GameManager.GetInstance().DetiveCounter();
+        GameManager.GetInstance().ChangeCounter("3");
+
+        //Restore time
+        Time.timeScale = 1;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

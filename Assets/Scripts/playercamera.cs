@@ -7,9 +7,10 @@ using UnityEngine.Rendering.Universal;
 public class playercamera : MonoBehaviour
 {
     [SerializeField] public Transform target;
+    [SerializeField] public float cameraspeed = 5f;
 
 
-    Player player;
+    Player player;          
     Volume volume;
     Vignette vignette;
     ColorAdjustments coloradjustments;
@@ -36,11 +37,18 @@ public class playercamera : MonoBehaviour
             return;
 
         }
-        float playerX = player.transform.position.x;
-        float playerY = player.transform.position.y;
-        float cameraZ = transform.position.z;
+        
+        if (target.tag == "Player")
+        {
+            transform.position = new Vector3(target.transform.position.x, target.transform.position.y, transform.position.z);
+        }
+        else if (target.tag == "red")
+        {
+            var targetPosition = new Vector3(target.transform.position.x, target.transform.position.y, transform.position.z);
+            transform.position = Vector3.MoveTowards(transform.position, targetPosition, cameraspeed * Time.unscaledDeltaTime);
+        }
 
-        transform.position = new Vector3(playerX, playerY, cameraZ);
+
     }
 
     
