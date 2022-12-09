@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] TMP_Text timerText;
+    public TMP_Text timerText;
     [SerializeField] GameObject blue;
     [SerializeField] GameObject green;
     [SerializeField] GameObject red;

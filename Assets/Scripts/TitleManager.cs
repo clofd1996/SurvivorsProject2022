@@ -3,23 +3,51 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class TitleManager : MonoBehaviour
 {
+    [SerializeField] GameObject SettingPanel;
+    public bool OnSelected; // ¿ØÖÆpost-processing on/offµÄbool
+    [SerializeField] TMP_Text Button;
+
     public static SaveData saveData;
     string SavePath => Path.Combine(Application.persistentDataPath, "save.data");
 
+    private void Start()
+    {
+        if (Bool.isButtomOn == true)
+        {
+            Button.text = "ON";
+        }
+        else
+        {
+            Button.text = "OFF";
+        }
+    }
 
     private void Awake()
     {
-        if (saveData == null)
+        if (saveData == null)  // ´æµµ
             Load();
         else
             Save();
 
         Debug.Log($"goldCoins:{saveData.coinsGetten}, deathCounter:{saveData.deathCount}");
+    }
+
+    private void Update()
+    {
+        if (Bool.isButtomOn == true)
+        {
+            Button.text = "ON";
+        }
+        else
+        {
+            Button.text = "OFF";
+        }
     }
 
     void Load()
@@ -44,6 +72,7 @@ public class TitleManager : MonoBehaviour
             }
                 
         }
+
     }
 
     void Save()
@@ -84,8 +113,25 @@ public class TitleManager : MonoBehaviour
         Debug.Log("have no time to do yet :<");
     }
 
+    public void OnSettingButtonClick()
+    {
+        SettingPanel.SetActive(true);
+    }
+
     public void OnQuitButtonClick()
     {
         Application.Quit();
     }
+
+    public void Switch()
+    {
+        Bool.isButtomOn = !Bool.isButtomOn;
+    }
+
+    public void OnExitButtonClick()
+    {
+        SettingPanel.SetActive(false);
+    }
+
+
 }

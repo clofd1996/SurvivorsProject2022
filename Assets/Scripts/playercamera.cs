@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
@@ -16,8 +17,6 @@ public class playercamera : MonoBehaviour
     ColorAdjustments coloradjustments;
     DepthOfField blur;
 
-
-
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
@@ -31,10 +30,14 @@ public class playercamera : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        float intensity = 0.5f * (1 - player.GetHpRatio());
-        vignette.intensity.Override(intensity);
 
-        if (pausepanel.activeInHierarchy == true) // 当暂停面板激活时，把镜头模糊的焦距调整到80
+        float intensity = 0.5f * (1 - player.GetHpRatio());
+        if (Bool.isButtomOn == true)
+        {
+            vignette.intensity.Override(intensity);
+        }   
+
+        if (pausepanel.activeInHierarchy == true && Bool.isButtomOn == true) // 当暂停面板激活时，把镜头模糊的焦距调整到80
         {
             blur.focalLength.Override(80);
         }
@@ -45,7 +48,7 @@ public class playercamera : MonoBehaviour
         }
 
 
-        if (player.playerHP <= 0) 
+        if (player.playerHP <= 0 && Bool.isButtomOn == true) 
         {
             coloradjustments.saturation.Override(-100); //黑白画面
             return;
@@ -61,9 +64,5 @@ public class playercamera : MonoBehaviour
             var targetPosition = new Vector3(target.transform.position.x, target.transform.position.y, transform.position.z);
             transform.position = Vector3.MoveTowards(transform.position, targetPosition, cameraspeed * Time.unscaledDeltaTime);
         }
-
-
     }
-
-    
 }
