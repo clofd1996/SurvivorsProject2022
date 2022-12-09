@@ -44,6 +44,17 @@ public class Player : MonoBehaviour
             //调整HP
             maxHP += 5; //最大HP增加5
             playerHP = maxHP; //把血量回满
+            //开始Heal的迭代器
+            StartCoroutine(HealCoroutine());
+            
+            IEnumerator HealCoroutine()
+            {
+                // Heal的绿色Shader特效
+                material.SetInt("_HealBool", 0); //把Breach切换到Heal特效（false）
+
+                yield return new WaitForSeconds(0.5f);
+                material.SetInt("_HealBool", 1); //把Breach切换到Flash特效（true）
+            }
 
             weapons[0].LevelUp(); //Kanata 升级
             weapons[1].LevelUp(); //Scythe 升级

@@ -39,5 +39,6 @@ Material:
     m_Ints: []
     m_Floats:
     - _Flash: 0
+    - _HealBool: 1
     m_Colors: []
   m_BuildTextureStacks: []
