@@ -16,12 +16,13 @@ public class Enemy : MonoBehaviour
     [SerializeField] GameObject damageNumber; // 伤害数字
     public int enemyDamage = 1;
     public bool isTrackingPlayer = true;
-    protected GameObject player; //定义一下GameObject具体是什么
+    protected GameObject player;
 
     // Start is called before the first frame update
     protected virtual void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player"); //定义下面update里player具体指代什么
+        //player = GameObject.FindGameObjectWithTag("Player"); //定义下面update里player具体指代什么
+        player = GameManager.GetInstance().currentPlayer;
         if (isBoss)
         {
             StartCoroutine(BossCameraCoroutine());

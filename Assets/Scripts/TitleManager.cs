@@ -136,4 +136,17 @@ public class TitleManager : MonoBehaviour
     }
 
 
+
+
+    public void SelectPlayer1()
+    {
+        PlayerIndex.GetInstance().index = 0;
+    }
+
+    public void SelectPlayer2()
+    {
+        PlayerIndex.GetInstance().index = 1;
+    }
+
+
 }

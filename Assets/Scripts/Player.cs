@@ -52,7 +52,7 @@ public class Player : MonoBehaviour
                 // Heal的绿色Shader特效
                 material.SetInt("_HealBool", 0); //把Breach切换到Heal特效（false）
 
-                yield return new WaitForSeconds(0.5f);
+                yield return new WaitForSeconds(1.0f);
                 material.SetInt("_HealBool", 1); //把Breach切换到Flash特效（true）
             }
 

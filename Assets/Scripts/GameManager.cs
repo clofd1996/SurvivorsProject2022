@@ -10,7 +10,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject green;
     [SerializeField] GameObject red;
     [SerializeField] GameObject giant;
-    [SerializeField] GameObject player;    
+
+    public GameObject[] player;
 
     [SerializeField] TMP_Text BlueNumber;
     [SerializeField] TMP_Text GreenNumber;
@@ -18,6 +19,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] TMP_Text GiantNumber;
 
     [SerializeField] TMP_Text ResumeNumber;
+
+    public GameObject currentPlayer;
 
     private int bluenumber = 0;
     private int greennumber = 0;
@@ -42,6 +45,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         StartCoroutine(SpawnEnemyCoroutine());
+        
     }
 
     private void Update()
@@ -76,7 +80,7 @@ public class GameManager : MonoBehaviour
         for (int i = 0; i < numberOfEnemies; i++)
         {
             Vector3 spawnPosition = Random.insideUnitCircle.normalized * 8;
-            spawnPosition += player.transform.position;
+            spawnPosition += currentPlayer.transform.position;
 
             //Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
             if (enemyPrefab == blue)
@@ -149,8 +153,6 @@ public class GameManager : MonoBehaviour
             SpawnEnemies(blue, 5);
             yield return new WaitForSeconds(3f);
             SpawnEnemies(giant, 3);
-            yield return new WaitForSeconds(2f);
-            SpawnEnemies(red, 1);
             yield return new WaitForSeconds(5f);
             SpawnEnemies(blue, 5, isWaveTracking: false);
             SpawnEnemies(green, 5);
@@ -159,21 +161,23 @@ public class GameManager : MonoBehaviour
             SpawnEnemies(green, 7);
             yield return new WaitForSeconds(5f);
             SpawnEnemies(blue, 10);
-            //yield return new WaitForSeconds(5f);
-            //SpawnEnemies(blue, 10, isWaveTracking: false);
-            //SpawnEnemies(green, 15);
-            //yield return new WaitForSeconds(10f);
-            //SpawnEnemies(blue, 15);
-            //SpawnEnemies(green, 20 , isWaveTracking: false);
-            //yield return new WaitForSeconds(10f);
-            //SpawnEnemies(blue, 20, isWaveTracking: false);
-            //SpawnEnemies(green, 10);
-            //yield return new WaitForSeconds(15f);
-            //SpawnEnemies(blue, 30);
-            //SpawnEnemies(green, 20);
-            //yield return new WaitForSeconds(15f);
-            //SpawnEnemies(blue, 30);
-            //SpawnEnemies(blue, 20, isWaveTracking: false);
+            yield return new WaitForSeconds(2f);
+            SpawnEnemies(red, 1);
+            yield return new WaitForSeconds(5f);
+            SpawnEnemies(blue, 10, isWaveTracking: false);
+            SpawnEnemies(green, 15);
+            yield return new WaitForSeconds(10f);
+            SpawnEnemies(blue, 15);
+            SpawnEnemies(green, 20 , isWaveTracking: false);
+            yield return new WaitForSeconds(10f);
+            SpawnEnemies(blue, 20, isWaveTracking: false);
+            SpawnEnemies(green, 10);
+            yield return new WaitForSeconds(15f);
+            SpawnEnemies(blue, 30);
+            SpawnEnemies(green, 20);
+            yield return new WaitForSeconds(15f);
+            SpawnEnemies(blue, 30);
+            SpawnEnemies(blue, 20, isWaveTracking: false);
         }
     }
 
@@ -190,5 +194,12 @@ public class GameManager : MonoBehaviour
     public void ChangeCounter(string number)
     {
         ResumeNumber.text = number;
+    }
+
+    public void ChangeCharacter()
+    {
+        currentPlayer.gameObject.SetActive(false);
+        currentPlayer = player[PlayerIndex.GetInstance().index];
+        currentPlayer.gameObject.SetActive(true);
     }
 }
