@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] TMP_Text ResumeNumber;
 
     public GameObject currentPlayer;
+    public int playerindex = Bool.index;
 
     private int bluenumber = 0;
     private int greennumber = 0;
@@ -38,14 +39,14 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        ChangeCharacter();
     }
 
 
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(SpawnEnemyCoroutine());
-        
+        StartCoroutine(SpawnEnemyCoroutine());        
     }
 
     private void Update()
@@ -199,7 +200,7 @@ public class GameManager : MonoBehaviour
     public void ChangeCharacter()
     {
         currentPlayer.gameObject.SetActive(false);
-        currentPlayer = player[PlayerIndex.GetInstance().index];
+        currentPlayer = player[playerindex];
         currentPlayer.gameObject.SetActive(true);
     }
 }

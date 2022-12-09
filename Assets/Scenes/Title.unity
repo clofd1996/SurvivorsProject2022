@@ -253,7 +253,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &252611383
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1031,7 +1031,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7102125499582216017, guid: 939c1939a5977084cbf6681647bf55dd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnExitButtonClick
+      value: OnExitPlayerButtonClick
       objectReference: {fileID: 0}
     - target: {fileID: 7102125499582216017, guid: 939c1939a5977084cbf6681647bf55dd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -1798,6 +1798,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SettingPanel: {fileID: 1342339223}
+  PlayerPanel: {fileID: 252611382}
   OnSelected: 1
   Button: {fileID: 1832957612}
 --- !u!1001 &1910896805

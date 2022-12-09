@@ -10,6 +10,7 @@ using UnityEngine.SceneManagement;
 public class TitleManager : MonoBehaviour
 {
     [SerializeField] GameObject SettingPanel;
+    [SerializeField] GameObject PlayerPanel;
     public bool OnSelected; // ¿ØÖÆpost-processing on/offµÄbool
     [SerializeField] TMP_Text Button;
 
@@ -112,7 +113,7 @@ public class TitleManager : MonoBehaviour
 
     public void OnUpgradeButtonClick()
     {
-        Debug.Log("have no time to do yet :<");
+        PlayerPanel.SetActive(true);
     }
 
     public void OnSettingButtonClick()
@@ -135,17 +136,22 @@ public class TitleManager : MonoBehaviour
         SettingPanel.SetActive(false);
     }
 
+    public void OnExitPlayerButtonClick()
+    {
+        PlayerPanel.SetActive(false);
+    }
+
 
 
 
     public void SelectPlayer1()
     {
-        PlayerIndex.GetInstance().index = 0;
+        Bool.index = 0;
     }
 
     public void SelectPlayer2()
     {
-        PlayerIndex.GetInstance().index = 1;
+        Bool.index = 1;
     }
 
 
