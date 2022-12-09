@@ -17,6 +17,8 @@ public class Player : MonoBehaviour
     [SerializeField] TMP_Text PauseCoin;
     [SerializeField] TMP_Text PauseEXP;
 
+    Material material; //Material Field
+
     public int playerHP;
     public int maxHP;
 
@@ -63,10 +65,6 @@ public class Player : MonoBehaviour
         return (float)playerHP / maxHP;
     }
 
-
-
-    bool isInvincible;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -76,19 +74,23 @@ public class Player : MonoBehaviour
         weapons[0].LevelUp(); //开始游戏的时候生成一把武器
                               //    StartCoroutine(SwordCoroutine());
 
-        
+        // Assign the material from the sprite renderer to your field
+        material = spriteRenderer.material;  
     }
 
+    bool isInvincible;
 
     public bool OnDamage()
     {
         IEnumerator InvincibleCoroutine()
         {
             isInvincible = true; //无敌
-            spriteRenderer.color = Color.red;
-            yield return new WaitForSeconds(0.5f);
+            //spriteRenderer.color = Color.red;
+            material.SetFloat("_Flash", 0.35f);
+            yield return new WaitForSeconds(0.2f);
             isInvincible = false; //取消无敌
-            spriteRenderer.color = Color.white;
+            //spriteRenderer.color = Color.white;
+            material.SetFloat("_Flash", 0);
         }
 
         if (!isInvincible) //如果 非无敌
@@ -103,6 +105,7 @@ public class Player : MonoBehaviour
     internal void Damage(int damage)
     {
         playerHP -= damage;
+        OnDamage();
 
         if (playerHP <= 0)
         {

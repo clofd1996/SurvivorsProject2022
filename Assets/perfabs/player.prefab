@@ -58,7 +58,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: e8671169adba97441b08fc7f850fd6ea, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -107,9 +107,15 @@ MonoBehaviour:
   weapons:
   - {fileID: 741416304573829141}
   - {fileID: 741416303288173173}
-  animator: {fileID: 741416303186700104}
+  playerLevel: {fileID: 0}
+  CoinNumber: {fileID: 0}
+  PauseLevel: {fileID: 0}
+  PauseHP: {fileID: 0}
+  PauseCoin: {fileID: 0}
+  PauseEXP: {fileID: 0}
   playerHP: 10
   maxHP: 10
+  animator: {fileID: 741416303186700104}
 --- !u!61 &741416303186700108
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -222,6 +228,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scythe: {fileID: 7124153658585765327, guid: 17683935e17bc354e94fbea8634e761a, type: 3}
+  pool: {fileID: 0}
 --- !u!1001 &994800576558219967
 PrefabInstance:
   m_ObjectHideFlags: 0
