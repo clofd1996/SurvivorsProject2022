@@ -15952,6 +15952,7 @@ MonoBehaviour:
   green: {fileID: 7342166721807998314, guid: 93db5d4f3256fe44d9c7656b17d6709b, type: 3}
   red: {fileID: 8500095066648559139, guid: 3633779737c74cb40b44aff8d660fc5d, type: 3}
   giant: {fileID: 7342166721807998314, guid: 0df60fdd713adf94fb217004c35017c7, type: 3}
+  boss: {fileID: 201237601506400140, guid: dbe3ef99cf016fa439a43c65df0fa732, type: 3}
   player:
   - {fileID: 544348659}
   - {fileID: 2027720228}
@@ -15959,6 +15960,7 @@ MonoBehaviour:
   GreenNumber: {fileID: 1657640421}
   RedNumber: {fileID: 1403969552}
   GiantNumber: {fileID: 1767670165}
+  BossNumber: {fileID: 0}
   ResumeNumber: {fileID: 1186189428}
   currentPlayer: {fileID: 544348659}
 --- !u!4 &2048876127

@@ -9,23 +9,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -4079460127661261988, guid: 34cafaae9a0260e439d9b1fd73168b40, type: 3}
       propertyPath: HP
-      value: 20
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: -4079460127661261988, guid: 34cafaae9a0260e439d9b1fd73168b40, type: 3}
       propertyPath: MaxHP
-      value: 20
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: -4079460127661261988, guid: 34cafaae9a0260e439d9b1fd73168b40, type: 3}
       propertyPath: isBoss
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4079460127661261988, guid: 34cafaae9a0260e439d9b1fd73168b40, type: 3}
       propertyPath: enemyDamage
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -4079460127661261988, guid: 34cafaae9a0260e439d9b1fd73168b40, type: 3}
       propertyPath: dropPercentage
-      value: 100
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 1473771098973607265, guid: 34cafaae9a0260e439d9b1fd73168b40, type: 3}
       propertyPath: m_Name
@@ -56,12 +56,16 @@ PrefabInstance:
       value: -0.14569715
       objectReference: {fileID: 0}
     - target: {fileID: 2435926853161296342, guid: 34cafaae9a0260e439d9b1fd73168b40, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2435926853161296342, guid: 34cafaae9a0260e439d9b1fd73168b40, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2435926853161296342, guid: 34cafaae9a0260e439d9b1fd73168b40, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 1
+      value: 0.6666667
       objectReference: {fileID: 0}
     - target: {fileID: 4919921459119029257, guid: 34cafaae9a0260e439d9b1fd73168b40, type: 3}
       propertyPath: m_Sprite

@@ -60,7 +60,7 @@ public class playercamera : MonoBehaviour
         {
             transform.position = new Vector3(target.position.x, target.position.y, transform.position.z);
         }
-        else if (target.tag == "red")
+        else if (target.tag == "boss")
         {
             var targetPosition = new Vector3(target.position.x, target.position.y, transform.position.z);
             transform.position = Vector3.MoveTowards(transform.position, targetPosition, cameraspeed * Time.unscaledDeltaTime);

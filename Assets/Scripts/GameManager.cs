@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject green;
     [SerializeField] GameObject red;
     [SerializeField] GameObject giant;
+    [SerializeField] GameObject boss;
 
     public Player[] player;
 
@@ -17,6 +18,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] TMP_Text GreenNumber;
     [SerializeField] TMP_Text RedNumber;
     [SerializeField] TMP_Text GiantNumber;
+    [SerializeField] TMP_Text BossNumber;
 
     [SerializeField] TMP_Text ResumeNumber;
 
@@ -26,6 +28,7 @@ public class GameManager : MonoBehaviour
     private int greennumber = 0;
     private int rednumber = 0;
     private int giantnumber = 0;
+    private int bossnumber = 0;
 
     // Singleton»¯
     private static GameManager instance;
@@ -115,6 +118,11 @@ public class GameManager : MonoBehaviour
                 enemyprefab.transform.rotation = Quaternion.identity;
                 enemyprefab.SetActive(true);
             }
+
+            else if (enemyPrefab == boss)
+            {
+                Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
+            }
         }
     }
 
@@ -143,6 +151,12 @@ public class GameManager : MonoBehaviour
             giantnumber++;
             GiantNumber.text = giantnumber.ToString();
         }
+
+        else if (enemyPrefab.tag == "boss")
+        {
+            bossnumber++;
+            BossNumber.text = bossnumber.ToString();
+        }
     }
 
     IEnumerator SpawnEnemyCoroutine()
@@ -152,18 +166,21 @@ public class GameManager : MonoBehaviour
           
             yield return new WaitForSeconds(2f);
             SpawnEnemies(blue, 5);
-            yield return new WaitForSeconds(3f);
-            SpawnEnemies(giant, 3);
+            yield return new WaitForSeconds(5f);
+            SpawnEnemies(boss, 1);
             yield return new WaitForSeconds(5f);
             SpawnEnemies(blue, 5, isWaveTracking: false);
             SpawnEnemies(green, 5);
+            yield return new WaitForSeconds(2f);
+            SpawnEnemies(red, 1);
             yield return new WaitForSeconds(5f);
             SpawnEnemies(blue, 5);
             SpawnEnemies(green, 7);
+            yield return new WaitForSeconds(3f);
+            SpawnEnemies(giant, 2);
             yield return new WaitForSeconds(5f);
             SpawnEnemies(blue, 10);
-            yield return new WaitForSeconds(2f);
-            SpawnEnemies(red, 1);
+
             yield return new WaitForSeconds(5f);
             SpawnEnemies(blue, 10, isWaveTracking: false);
             SpawnEnemies(green, 15);
@@ -179,6 +196,9 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(15f);
             SpawnEnemies(blue, 30);
             SpawnEnemies(blue, 20, isWaveTracking: false);
+
+            yield return new WaitForSeconds(5f);
+            SpawnEnemies(boss, 1);
         }
     }
 

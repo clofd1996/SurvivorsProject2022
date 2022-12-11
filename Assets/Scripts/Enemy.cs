@@ -99,7 +99,15 @@ public class Enemy : MonoBehaviour
         direction.Normalize(); //单位向量化，原本不到1的，长度可以变成1
 
         transform.position += direction * Time.deltaTime * speed;
-        transform.localScale = new Vector3(direction.x > 0 ? -1 : 1, 1, 1); //自动转向
+        if (gameObject.tag == "boss")
+        {
+            transform.localScale = new Vector3(direction.x > 0 ? 1 : -1, 1, 1); // 就boss的sprite特殊
+        }
+        else
+        {
+            transform.localScale = new Vector3(direction.x > 0 ? -1 : 1, 1, 1); //自动转向
+        }
+
 
         
 
