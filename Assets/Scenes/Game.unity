@@ -7247,6 +7247,51 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 741416303186700119, guid: 5efee29f4689cd440b294860b70c975f, type: 3}
   m_PrefabInstance: {fileID: 741416303726853817}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &564694641
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 564694643}
+  - component: {fileID: 564694642}
+  m_Layer: 0
+  m_Name: FireballPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &564694642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 564694641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7917c71715ff4f644bcad0d12fdb7d61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectPrefab: {fileID: 137149214240877907, guid: bc1f9b8298cdabe49b4e6c4193815b7a, type: 3}
+--- !u!4 &564694643
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 564694641}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 960, y: 540, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 22
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -13759,6 +13804,7 @@ MonoBehaviour:
   exppool: {fileID: 454994536}
   coinpool: {fileID: 327014402}
   giantknifepool: {fileID: 1372043382}
+  fireballpool: {fileID: 564694642}
   bluepool: {fileID: 519854869}
   greenpool: {fileID: 1975241506}
   redpool: {fileID: 1134682234}

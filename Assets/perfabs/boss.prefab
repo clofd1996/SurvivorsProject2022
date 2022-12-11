@@ -119,5 +119,54 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -4079460127661261988, guid: 34cafaae9a0260e439d9b1fd73168b40, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 34cafaae9a0260e439d9b1fd73168b40, type: 3}
+--- !u!1 &201237601506400140 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1473771098973607265, guid: 34cafaae9a0260e439d9b1fd73168b40, type: 3}
+  m_PrefabInstance: {fileID: 1637361422343242477}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &-4121543349481502931
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 201237601506400140}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 36c342ded7ff43744bdc8b8fccee42c9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2432135317342264230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 201237601506400140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57517b7ee63646440b971a339ad65ccb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isBoss: 1
+  expPrefab: {fileID: 2304657266745190885, guid: f34f820df22cc954ca544f460ab3b93f, type: 3}
+  coinPrefab: {fileID: 3889737469261826054, guid: 1985c697ad1e3a24f89d905705e9e1d9, type: 3}
+  speed: 3
+  HP: 5
+  MaxHP: 5
+  dropPercentage: 100
+  damageNumber: {fileID: 2365404541973262386, guid: 6d83554ed2c66a04cb1658930a501525, type: 3}
+  enemyDamage: 3
+  isTrackingPlayer: 1
+  fireballPrefab: {fileID: 137149214240877907, guid: bc1f9b8298cdabe49b4e6c4193815b7a, type: 3}

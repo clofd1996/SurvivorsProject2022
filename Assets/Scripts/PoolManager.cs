@@ -7,6 +7,7 @@ public class PoolManager : MonoBehaviour
     public SimpleObjectPool exppool;
     public SimpleObjectPool coinpool;
     public SimpleObjectPool giantknifepool;
+    public SimpleObjectPool fireballpool;
 
     public SimpleObjectPool bluepool;
     public SimpleObjectPool greenpool;

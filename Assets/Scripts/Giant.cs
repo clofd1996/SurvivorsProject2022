@@ -52,15 +52,7 @@ public class Giant : Enemy
                 giantState = GiantState.Idle;
                 waitTimer = 5f;
                 break;
-            //case GiantState.Injury:
-            //    base.Update();
-            //    float hpRatio = HP / MaxHP;
-            //    if (hpRatio)
-            //    else if (hpRatio <= 0.5) // Under 50% HP
-            //    {
-            //        giantState = GiantState.Berserk; // goes into Berserk state
-            //    }
-            //    break;
+
             case GiantState.Berserk:
                 //base.Update(); // only stays in Berserk
                 animator.SetTrigger("Attack"); // continuously be in attacking state                
