@@ -82,8 +82,9 @@ public class Player : MonoBehaviour
         playerHP = maxHP;
         animator = GetComponent<Animator>(); //添加动画
 
-        weapons[0].LevelUp(); //开始游戏的时候生成一把武器
-                              //    StartCoroutine(SwordCoroutine());
+        //开始游戏的时候生成一把武器
+        weapons[0].LevelUp(); 
+
 
         // Assign the material from the sprite renderer to your field
         material = spriteRenderer.material;  
