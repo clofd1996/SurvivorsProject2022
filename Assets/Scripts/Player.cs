@@ -87,6 +87,7 @@ public class Player : MonoBehaviour
 
         // Assign the material from the sprite renderer to your field
         material = spriteRenderer.material;  
+
     }
 
     bool isInvincible;

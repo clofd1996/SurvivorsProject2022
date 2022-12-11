@@ -19,7 +19,9 @@ public class playercamera : MonoBehaviour
 
     private void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        //player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        player = GameManager.GetInstance().currentPlayer;
+        target = GameManager.GetInstance().currentPlayer.transform;
         volume = GetComponent<Volume>(); //这个最基本的GetComponent
         // out是必须的
         volume.profile.TryGet(out vignette); //从volume这个profile中 调用vignette这个override
@@ -30,7 +32,6 @@ public class playercamera : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-
         float intensity = 0.5f * (1 - player.GetHpRatio());
         if (Bool.isButtomOn == true)
         {

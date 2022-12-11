@@ -147,11 +147,13 @@ public class TitleManager : MonoBehaviour
     public void SelectPlayer1()
     {
         Bool.index = 0;
+        Debug.Log("show" + Bool.index);
     }
 
     public void SelectPlayer2()
     {
         Bool.index = 1;
+        Debug.Log("show" + Bool.index);
     }
 
 

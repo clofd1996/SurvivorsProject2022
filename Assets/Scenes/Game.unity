@@ -13785,6 +13785,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 741416303186700104, guid: 41b7b2841834a5146b82b965008e192b, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 741416303186700106, guid: 41b7b2841834a5146b82b965008e192b, type: 3}
       propertyPath: PauseHP
       value: 
@@ -13796,7 +13800,7 @@ PrefabInstance:
     - target: {fileID: 741416303186700106, guid: 41b7b2841834a5146b82b965008e192b, type: 3}
       propertyPath: animator
       value: 
-      objectReference: {fileID: 741416303726853820}
+      objectReference: {fileID: 2027720225}
     - target: {fileID: 741416303186700106, guid: 41b7b2841834a5146b82b965008e192b, type: 3}
       propertyPath: PauseCoin
       value: 
@@ -13816,7 +13820,7 @@ PrefabInstance:
     - target: {fileID: 741416303186700106, guid: 41b7b2841834a5146b82b965008e192b, type: 3}
       propertyPath: spriteRenderer
       value: 
-      objectReference: {fileID: 741416303726853821}
+      objectReference: {fileID: 2027720229}
     - target: {fileID: 741416303186700106, guid: 41b7b2841834a5146b82b965008e192b, type: 3}
       propertyPath: weapons.Array.data[0]
       value: 
@@ -15851,6 +15855,27 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 1
+--- !u!95 &2027720225 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 741416303186700104, guid: 41b7b2841834a5146b82b965008e192b, type: 3}
+  m_PrefabInstance: {fileID: 1205723617}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2027720228 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 741416303186700106, guid: 41b7b2841834a5146b82b965008e192b, type: 3}
+  m_PrefabInstance: {fileID: 1205723617}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2027720222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88f28b4a0c4ec7b49b49f8d8bff638ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!212 &2027720229 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 741416303186700116, guid: 41b7b2841834a5146b82b965008e192b, type: 3}
+  m_PrefabInstance: {fileID: 1205723617}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2048876125
 GameObject:
   m_ObjectHideFlags: 0
@@ -15886,15 +15911,15 @@ MonoBehaviour:
   red: {fileID: 8500095066648559139, guid: 3633779737c74cb40b44aff8d660fc5d, type: 3}
   giant: {fileID: 7342166721807998314, guid: 0df60fdd713adf94fb217004c35017c7, type: 3}
   player:
-  - {fileID: 544348651}
-  - {fileID: 2027720222}
+  - {fileID: 544348659}
+  - {fileID: 2027720228}
   BlueNumber: {fileID: 2115771153}
   GreenNumber: {fileID: 1657640421}
   RedNumber: {fileID: 1403969552}
   GiantNumber: {fileID: 1767670165}
   ResumeNumber: {fileID: 1186189428}
-  currentPlayer: {fileID: 544348651}
-  playerindex: 1
+  currentPlayer: {fileID: 544348659}
+  playerindex: 0
 --- !u!4 &2048876127
 Transform:
   m_ObjectHideFlags: 0
@@ -16159,6 +16184,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 916358948}
     - target: {fileID: 741416303186700106, guid: 5efee29f4689cd440b294860b70c975f, type: 3}
+      propertyPath: spriteRenderer2
+      value: 
+      objectReference: {fileID: 2027720229}
+    - target: {fileID: 741416303186700106, guid: 5efee29f4689cd440b294860b70c975f, type: 3}
       propertyPath: weapons.Array.data[0]
       value: 
       objectReference: {fileID: 741416303726853819}
@@ -16169,6 +16198,10 @@ PrefabInstance:
     - target: {fileID: 741416303186700114, guid: 5efee29f4689cd440b294860b70c975f, type: 3}
       propertyPath: m_Name
       value: player
+      objectReference: {fileID: 0}
+    - target: {fileID: 741416303186700114, guid: 5efee29f4689cd440b294860b70c975f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 741416303186700119, guid: 5efee29f4689cd440b294860b70c975f, type: 3}
       propertyPath: m_RootOrder
@@ -16250,13 +16283,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9960f5fee840d5942bfd239f55d81254, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!95 &741416303726853820 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 741416303186700104, guid: 5efee29f4689cd440b294860b70c975f, type: 3}
-  m_PrefabInstance: {fileID: 741416303726853817}
-  m_PrefabAsset: {fileID: 0}
---- !u!212 &741416303726853821 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 741416303186700116, guid: 5efee29f4689cd440b294860b70c975f, type: 3}
-  m_PrefabInstance: {fileID: 741416303726853817}
-  m_PrefabAsset: {fileID: 0}

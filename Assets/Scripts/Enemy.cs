@@ -16,7 +16,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] GameObject damageNumber; // ÉËº¦Êý×Ö
     public int enemyDamage = 1;
     public bool isTrackingPlayer = true;
-    protected GameObject player;
+    protected Player player;
 
     // Start is called before the first frame update
     protected virtual void Start()

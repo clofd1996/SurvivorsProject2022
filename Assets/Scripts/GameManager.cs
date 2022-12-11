@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject red;
     [SerializeField] GameObject giant;
 
-    public GameObject[] player;
+    public Player[] player;
 
     [SerializeField] TMP_Text BlueNumber;
     [SerializeField] TMP_Text GreenNumber;
@@ -20,8 +20,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] TMP_Text ResumeNumber;
 
-    public GameObject currentPlayer;
-    public int playerindex = Bool.index;
+    public Player currentPlayer;
 
     private int bluenumber = 0;
     private int greennumber = 0;
@@ -46,7 +45,8 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(SpawnEnemyCoroutine());        
+        StartCoroutine(SpawnEnemyCoroutine());
+
     }
 
     private void Update()
@@ -200,7 +200,9 @@ public class GameManager : MonoBehaviour
     public void ChangeCharacter()
     {
         currentPlayer.gameObject.SetActive(false);
-        currentPlayer = player[playerindex];
+        currentPlayer = player[Bool.index];
+        
+        Debug.Log("show" + Bool.index);
         currentPlayer.gameObject.SetActive(true);
     }
 }
