@@ -53,7 +53,6 @@ public class Boss : Enemy
                 break;
 
             case BossState.Dash:
-                //base.Update(); // only stays in Berserk
                 animator.SetTrigger("Dash"); // continuously be in attacking state                
                 break;
             default:
@@ -71,7 +70,6 @@ public class Boss : Enemy
         }
         else if (hpRatio <= 0.5)
         {
-            GetComponent<SpriteRenderer>().color = Color.red;
             giantState = BossState.Dash;
         }
 

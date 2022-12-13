@@ -75,7 +75,7 @@ public class Enemy : MonoBehaviour
         if (player != null)
         {
             player.Damage(enemyDamage); //碰撞造成 Enemy Damage = 1点伤害
-            if (gameObject.tag != "red") // 只要不是Boss(red)
+            if (gameObject.tag == "blue" || gameObject.tag == "green") // 只要不是Boss(red)
             {
                 gameObject.SetActive(false); //怪物碰撞后消失
             }
