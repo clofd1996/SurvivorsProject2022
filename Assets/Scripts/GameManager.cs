@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject red;
     [SerializeField] GameObject giant;
     [SerializeField] GameObject boss;
+    [SerializeField] GameObject background;
+    [SerializeField] GameObject background2;
 
     public Player[] player;
 
@@ -29,6 +31,11 @@ public class GameManager : MonoBehaviour
     private int rednumber = 0;
     private int giantnumber = 0;
     private int bossnumber = 0;
+
+    public GameObject boss1;
+
+    // use for stop coroutine
+    public bool flag;
 
     // Singleton»¯
     private static GameManager instance;
@@ -49,7 +56,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         StartCoroutine(SpawnEnemyCoroutine());
-
+        flag = true;
     }
 
     private void Update()
@@ -77,6 +84,27 @@ public class GameManager : MonoBehaviour
         }
 
         timerText.text = minutestext + ":" + secondstext;
+
+        if (minutes == 1 && flag == true) // Time limit, go to next stage
+        {
+            // Stop Coroutine
+            StopCoroutine(SpawnEnemyCoroutine());
+            // Destroy All Enemy
+            PoolManager.GetInstance().bluepool.Destroy();
+            PoolManager.GetInstance().greenpool.Destroy();
+            PoolManager.GetInstance().redpool.Destroy();
+            PoolManager.GetInstance().giantpool.Destroy();
+            Destroy(boss1);
+            // Destroy All Drops
+            PoolManager.GetInstance().coinpool.Destroy();
+            PoolManager.GetInstance().exppool.Destroy();
+            // Change Map
+            background.SetActive(false); 
+            background2.SetActive(true);
+            // Start New Coroutine
+            StartCoroutine(SpawnEnemyCoroutine2());
+            flag = false;
+        }
     }
 
     void SpawnEnemies(GameObject enemyPrefab, int numberOfEnemies, bool isWaveTracking = true)
@@ -121,7 +149,7 @@ public class GameManager : MonoBehaviour
 
             else if (enemyPrefab == boss)
             {
-                Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
+                boss1 =Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
             }
         }
     }
@@ -197,6 +225,46 @@ public class GameManager : MonoBehaviour
             SpawnEnemies(blue, 30);
             SpawnEnemies(blue, 20, isWaveTracking: false);
 
+            yield return new WaitForSeconds(5f);
+            SpawnEnemies(boss, 1);
+        }
+    }
+
+    IEnumerator SpawnEnemyCoroutine2()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(2f);
+            SpawnEnemies(blue, 5);
+            yield return new WaitForSeconds(5f);
+            SpawnEnemies(green, 5);
+            yield return new WaitForSeconds(5f);
+            SpawnEnemies(blue, 5, isWaveTracking: false);
+            SpawnEnemies(green, 5);
+            yield return new WaitForSeconds(2f);
+            SpawnEnemies(red, 1);
+            yield return new WaitForSeconds(5f);
+            SpawnEnemies(blue, 5);
+            SpawnEnemies(green, 7);
+            yield return new WaitForSeconds(3f);
+            SpawnEnemies(giant, 2);
+            yield return new WaitForSeconds(5f);
+            SpawnEnemies(blue, 10);
+            yield return new WaitForSeconds(5f);
+            SpawnEnemies(blue, 10, isWaveTracking: false);
+            SpawnEnemies(green, 15);
+            yield return new WaitForSeconds(10f);
+            SpawnEnemies(blue, 15);
+            SpawnEnemies(green, 20, isWaveTracking: false);
+            yield return new WaitForSeconds(10f);
+            SpawnEnemies(blue, 20, isWaveTracking: false);
+            SpawnEnemies(green, 10);
+            yield return new WaitForSeconds(15f);
+            SpawnEnemies(blue, 30);
+            SpawnEnemies(green, 20);
+            yield return new WaitForSeconds(15f);
+            SpawnEnemies(blue, 30);
+            SpawnEnemies(blue, 20, isWaveTracking: false);
             yield return new WaitForSeconds(5f);
             SpawnEnemies(boss, 1);
         }

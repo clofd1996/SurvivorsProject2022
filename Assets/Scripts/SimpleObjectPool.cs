@@ -30,4 +30,12 @@ public class SimpleObjectPool : MonoBehaviour
         var result = pooledObjects[objectIndex++];
         return result;
     }
+
+    public void Destroy()
+    {
+        for (int i = 0; i<500; i++)
+        {
+            pooledObjects[i].SetActive(false);
+        }
+    }
 }
