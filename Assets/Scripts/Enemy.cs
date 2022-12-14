@@ -17,6 +17,8 @@ public class Enemy : MonoBehaviour
     public int enemyDamage = 1;
     public bool isTrackingPlayer = true;
     protected Player player;
+    [SerializeField] SpriteRenderer spriteRenderer;
+    Material material; //Material Field
 
     // Start is called before the first frame update
     protected virtual void Start()
@@ -27,6 +29,8 @@ public class Enemy : MonoBehaviour
         {
             StartCoroutine(BossCameraCoroutine());
         }
+        // Assign the material from the sprite renderer to your field
+        material = spriteRenderer.material;
     }
 
     IEnumerator BossCameraCoroutine()
@@ -118,9 +122,7 @@ public class Enemy : MonoBehaviour
         GameObject gb = Instantiate(damageNumber, transform.position, Quaternion.identity) as GameObject; // 生成伤害值气泡
         gb.transform.GetChild(0).GetComponent<TextMesh>().text = damage.ToString();
         HP -= damage;
-        
 
-        
         if (HP <= 0)
         {
             Vector2 transformPlace = transform.position;

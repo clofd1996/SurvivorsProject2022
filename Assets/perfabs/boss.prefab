@@ -163,10 +163,16 @@ MonoBehaviour:
   expPrefab: {fileID: 2304657266745190885, guid: f34f820df22cc954ca544f460ab3b93f, type: 3}
   coinPrefab: {fileID: 3889737469261826054, guid: 1985c697ad1e3a24f89d905705e9e1d9, type: 3}
   speed: 3
-  HP: 5
-  MaxHP: 5
+  HP: 20
+  MaxHP: 20
   dropPercentage: 100
   damageNumber: {fileID: 2365404541973262386, guid: 6d83554ed2c66a04cb1658930a501525, type: 3}
   enemyDamage: 3
   isTrackingPlayer: 1
+  spriteRenderer: {fileID: 5980218496954334948}
   fireballPrefab: {fileID: 137149214240877907, guid: bc1f9b8298cdabe49b4e6c4193815b7a, type: 3}
+--- !u!212 &5980218496954334948 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 4919921459119029257, guid: 34cafaae9a0260e439d9b1fd73168b40, type: 3}
+  m_PrefabInstance: {fileID: 1637361422343242477}
+  m_PrefabAsset: {fileID: 0}

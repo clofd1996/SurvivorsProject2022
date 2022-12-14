@@ -99,6 +99,11 @@ PrefabInstance:
     - {fileID: 1791054429308753247, guid: 34cafaae9a0260e439d9b1fd73168b40, type: 3}
     - {fileID: -4079460127661261988, guid: 34cafaae9a0260e439d9b1fd73168b40, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 34cafaae9a0260e439d9b1fd73168b40, type: 3}
+--- !u!212 &3877718276471272450 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 4919921459119029257, guid: 34cafaae9a0260e439d9b1fd73168b40, type: 3}
+  m_PrefabInstance: {fileID: 8185150185995782155}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &7342166721807998314 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1473771098973607265, guid: 34cafaae9a0260e439d9b1fd73168b40, type: 3}
@@ -136,6 +141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13887f548dbb12b42ba7d17f82cc17ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isBoss: 0
   expPrefab: {fileID: 2304657266745190885, guid: f34f820df22cc954ca544f460ab3b93f, type: 3}
   coinPrefab: {fileID: 3889737469261826054, guid: 1985c697ad1e3a24f89d905705e9e1d9, type: 3}
   speed: 2
@@ -145,4 +151,6 @@ MonoBehaviour:
   damageNumber: {fileID: 2365404541973262386, guid: 6d83554ed2c66a04cb1658930a501525, type: 3}
   enemyDamage: 1
   isTrackingPlayer: 1
+  spriteRenderer: {fileID: 3877718276471272450}
+  flag: 0
   knifePrefab: {fileID: 137149214240877907, guid: a4be2fbf05eb6db4f9f0f7f0294df3af, type: 3}
