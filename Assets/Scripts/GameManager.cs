@@ -195,8 +195,6 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(2f);
             SpawnEnemies(blue, 5);
             yield return new WaitForSeconds(5f);
-            SpawnEnemies(boss, 1);
-            yield return new WaitForSeconds(5f);
             SpawnEnemies(blue, 5, isWaveTracking: false);
             SpawnEnemies(green, 5);
             yield return new WaitForSeconds(2f);
@@ -211,12 +209,14 @@ public class GameManager : MonoBehaviour
 
             yield return new WaitForSeconds(5f);
             SpawnEnemies(blue, 10, isWaveTracking: false);
-            SpawnEnemies(green, 15);
+            SpawnEnemies(giant, 3);
             yield return new WaitForSeconds(10f);
             SpawnEnemies(blue, 15);
             SpawnEnemies(green, 20 , isWaveTracking: false);
+            yield return new WaitForSeconds(5f);
+            SpawnEnemies(boss, 1);
             yield return new WaitForSeconds(10f);
-            SpawnEnemies(blue, 20, isWaveTracking: false);
+            SpawnEnemies(giant, 5);
             SpawnEnemies(green, 10);
             yield return new WaitForSeconds(15f);
             SpawnEnemies(blue, 30);
@@ -224,9 +224,6 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(15f);
             SpawnEnemies(blue, 30);
             SpawnEnemies(blue, 20, isWaveTracking: false);
-
-            yield return new WaitForSeconds(5f);
-            SpawnEnemies(boss, 1);
         }
     }
 
@@ -235,29 +232,33 @@ public class GameManager : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(2f);
-            SpawnEnemies(blue, 5);
-            yield return new WaitForSeconds(5f);
             SpawnEnemies(green, 5);
+            yield return new WaitForSeconds(5f);
+            SpawnEnemies(giant, 5);
             yield return new WaitForSeconds(5f);
             SpawnEnemies(blue, 5, isWaveTracking: false);
-            SpawnEnemies(green, 5);
+            SpawnEnemies(red, 5);
             yield return new WaitForSeconds(2f);
             SpawnEnemies(red, 1);
             yield return new WaitForSeconds(5f);
-            SpawnEnemies(blue, 5);
-            SpawnEnemies(green, 7);
-            yield return new WaitForSeconds(3f);
+            SpawnEnemies(red, 5);
+            SpawnEnemies(giant, 7);
+            yield return new WaitForSeconds(5f);
             SpawnEnemies(giant, 2);
+            SpawnEnemies(red, 10);
             yield return new WaitForSeconds(5f);
             SpawnEnemies(blue, 10);
+            SpawnEnemies(giant, 5);
             yield return new WaitForSeconds(5f);
             SpawnEnemies(blue, 10, isWaveTracking: false);
-            SpawnEnemies(green, 15);
+            SpawnEnemies(red, 15);
             yield return new WaitForSeconds(10f);
             SpawnEnemies(blue, 15);
             SpawnEnemies(green, 20, isWaveTracking: false);
+            yield return new WaitForSeconds(5f);
+            SpawnEnemies(boss, 1);
             yield return new WaitForSeconds(10f);
-            SpawnEnemies(blue, 20, isWaveTracking: false);
+            SpawnEnemies(red, 20, isWaveTracking: false);
             SpawnEnemies(green, 10);
             yield return new WaitForSeconds(15f);
             SpawnEnemies(blue, 30);
@@ -265,8 +266,7 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(15f);
             SpawnEnemies(blue, 30);
             SpawnEnemies(blue, 20, isWaveTracking: false);
-            yield return new WaitForSeconds(5f);
-            SpawnEnemies(boss, 1);
+
         }
     }
 
